@@ -1,0 +1,92 @@
+[
+    {
+      "_id": "642c155b2c4774f05c36ee01",
+      "name": "John Smith",
+      "taken_class": "Introduction to Photography",
+      "ratings": 4.5,
+      "email": "john.smith@example.com",
+      "image": "https://i.ibb.co/HDJLFbY/photographer.jpg",
+      "category": "popular"
+    },
+    {
+      "_id": "642c155b2c4774f05c36ee02",
+      "name": "Emily Johnson",
+      "taken_class": "Portrait Photography",
+      "ratings": 4.8,
+      "email": "emily.johnson@example.com",
+      "image": "https://i.ibb.co/jv6WdZh/portrait-Ins.jpg",
+      "category": "regular"
+    },
+    {
+      "_id": "642c155b2c4774f05c36ee03",
+      "name": "Michael Brown",
+      "taken_class": "Landscape Photography",
+      "ratings": 4.3,
+      "email": "michael.brown@example.com",
+      "image": "https://i.ibb.co/tLrd6m1/landscape-Ins.jpg",
+      "category": "popular"
+    },
+    {
+      "_id": "642c155b2c4774f05c36ee04",
+      "name": "Sarah Davis",
+      "taken_class": "Street Photography",
+      "ratings": 4.6,
+      "email": "sarah.davis@example.com",
+      "image": "https://i.ibb.co/XWjdCZS/street-Ins.jpg",
+      "category": "regular"
+    },
+    {
+      "_id": "642c155b2c4774f05c36ee05",
+      "name": "David Wilson",
+      "taken_class": "Fashion Photography",
+      "ratings": 4.9,
+      "email": "david.wilson@example.com",
+      "image": "https://i.ibb.co/WPv8vBr/fashion-Ins.jpg",
+      "category": "popular"
+    },
+    {
+      "_id": "642c155b2c4774f05c36ee06",
+      "name": "Jessica Thompson",
+      "taken_class": "Wildlife Photography",
+      "ratings": 4.7,
+      "email": "jessica.thompson@example.com",
+      "image": "https://i.ibb.co/QCMF5RD/wildIns.jpg",
+      "category": "regular"
+    },
+    {
+      "_id": "642c155b2c4774f05c36ee07",
+      "name": "Robert Martin",
+      "taken_class": "Black and White Photography",
+      "ratings": 4.4,
+      "email": "robert.martin@example.com",
+      "image": "https://i.ibb.co/2NrTpHd/black-White-Ins.webp",
+      "category": "popular"
+    },
+    {
+      "_id": "642c155b2c4774f05c36ee08",
+      "name": "Jennifer Adams",
+      "taken_class": "Food Photography",
+      "ratings": 4.2,
+      "email": "jennifer.adams@example.com",
+      "image": "https://i.ibb.co/SrV17Mw/foodIns.jpg",
+      "category": "regular"
+    },
+    {
+      "_id": "642c155b2c4774f05c36ee09",
+      "name": "Matthew Turner",
+      "taken_class": "Astrophotography",
+      "ratings": 4.6,
+      "email": "matthew.turner@example.com",
+      "image": "https://i.ibb.co/tLrd6m1/landscape-Ins.jpg",
+      "category": "popular"
+    },
+    {
+      "_id": "642c155b2c4774f05c36ee10",
+      "name": "Stephanie Clark",
+      "taken_class": "Wedding Photography",
+      "ratings": 4.1,
+      "email": "stephanie.clark@example.com",
+      "image": "https://i.ibb.co/cgnchKF/wedIns.jpg",
+      "category": "regular"
+    }
+  ]

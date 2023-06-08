@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import logo from '../../../assets/logo.jpg';
 
 const Footer = () => {
@@ -15,7 +15,7 @@ const Footer = () => {
                         <div className="text-center md:text-left">
                             <div className="logo-section">
                                 {/* Your logo here */}
-                                <img src="logo.png" alt="Logo" className="mx-auto md:mx-0 h-10 md:h-12" />
+                                <img src={logo} alt="Logo" className="mx-auto md:mx-0 h-10 md:h-12" />
                             </div>
                         </div>
                         <div>

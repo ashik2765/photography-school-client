@@ -1,10 +1,11 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
+import errorImg from '../../assets/error.jpg'
 
 const ErrorPage = () => {
     return (
         <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-r from-purple-600 to-pink-600">
-            <img src="" alt="Error" className="w-64 h-64 mb-8 rounded-full shadow-xl" />
+            <img src={errorImg} alt="Error" className="w-64 h-64 mb-8 rounded-full shadow-xl" />
             <h1 className="text-5xl font-bold text-white mb-4">Oops! Something went wrong.</h1>
             <p className="text-xl text-white text-center mb-8">We apologize for the inconvenience. Please try again later.</p>
             <a href="/" >

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -11,7 +11,7 @@ const Navbar = () => {
         
     </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-slate-600 text-white fixed z-10 opacity-40 ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
