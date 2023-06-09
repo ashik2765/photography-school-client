@@ -3,7 +3,7 @@
 const InstructorCart = ({item}) => {
     const {name,taken_class,description,ratings,image,email} = item;
     return (
-        <div className="card card-compact w-96 bg-base-100 shadow-xl">
+        <div className="card card-compact w-96 bg-base-100 shadow-xl mx-auto">
             <figure><img src={image} alt="Image" className="w-full h-80" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>

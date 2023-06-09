@@ -5,14 +5,14 @@ const Footer = () => {
     const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
 
     useEffect(() => {
-      setCurrentYear(new Date().getFullYear());
+        setCurrentYear(new Date().getFullYear());
     }, []);
     return (
         <div>
-            <footer className="bg-gray-900 text-white">
+            <footer className="bg-gradient-to-r from-purple-500 to-blue-500 text-white">
                 <div className="container mx-auto py-8 md:py-12">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="text-center md:text-left">
+                        <div className="text-center md:text-left ms-4">
                             <div className="logo-section">
                                 {/* Your logo here */}
                                 <img src={logo} alt="Logo" className="mx-auto md:mx-0 h-10 md:h-12" />
@@ -28,7 +28,7 @@ const Footer = () => {
                             </div>
                         </div>
                         <div className="text-center md:text-right">
-                            <div className="social-section">
+                            <div className="social-section me-5">
                                 {/* Social links */}
                                 <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
                                 <ul className="flex justify-center md:justify-end space-x-4">

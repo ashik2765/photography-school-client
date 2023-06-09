@@ -1,25 +1,21 @@
-import anime from 'animejs';
-import { useEffect, useRef } from 'react';
+import useClasses from '../../Hooks/useClasses';
+import InstructorCart from '../Shared/InstructorCart/InstructorCart';
 
 const Instructor = () => {
-    const elementRef = useRef(null);
+    const [classes] = useClasses([]);
 
-    useEffect(() => {
-        const element = elementRef.current;
-
-        anime({
-            targets: element,
-            translateX: 250,
-            rotate: '1turn',
-            backgroundColor: '#ff0000',
-            duration: 2000,
-            easing: 'easeInOutSine',
-        });
-    }, []);
     return (
         <div>
-            <div ref={elementRef} className="bg-blue-500 p-4 text-white w-72">
-                Hello, Anime.js!
+            <div className="bg-gradient-to-r from-purple-500 to-blue-500 py-5 rounded-lg my-5 ">
+                <h2 className="text-3xl font-bold text-white text-center">Meet Our Instructors</h2>
+            </div>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4'>
+                {
+                    classes.map(item => <InstructorCart
+                        key={item._id}
+                        item={item}
+                    ></InstructorCart>)
+                }
             </div>
         </div>
     );

@@ -1,23 +1,20 @@
-import { useEffect, useState } from 'react';
 import ClassesCart from '../../Shared/ClassesCart/ClassesCart';
+import useClasses from '../../../Hooks/useClasses';
 
 
 const PopularClasses = () => {
-    const [classes, setClasses] = useState([])
 
-    useEffect(() => {
-        fetch('classes.json')
-            .then(res => res.json())
-            .then(data => {
-                const popularClasses = data.filter(item => item.category === 'popular');
-                setClasses(popularClasses)
-            })
-    }, [])
+    const [classes] = useClasses();
+
+    const popular = classes.filter(item => item.category === 'popular');
+
     return (
         <div className="container mx-auto py-4">
-            <h1 className="text-2xl font-semibold mb-4">Photography Courses</h1>
+            <div className="bg-gradient-to-r from-purple-500 to-blue-500 py-5 rounded-lg my-5">
+                <h2 className="text-3xl font-bold text-white text-center">Our Classes</h2>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {classes.map(item => <ClassesCart
+                {popular.map(item => <ClassesCart
                     key={item._id}
                     item={item}
                 ></ClassesCart>)}

@@ -1,27 +1,24 @@
-import { useEffect, useState } from "react";
+
+import useIstructors from "../../../Hooks/useIstructors";
 import InstructorCart from "../../Shared/InstructorCart/InstructorCart";
 
 
 const PopularInstractor = () => {
-    const [instractor, setInstractor] = useState([])
-    useEffect(() => {
-        fetch('instructor.json')
-            .then(res => res.json())
-            .then(data => {
-                const PopularInstructors = data.filter(item => item.category === "popular")
-                setInstractor(PopularInstructors)
-            })
-    }, [])
+    const [instructors] = useIstructors();
+
+    const popular = instructors.filter(item => item.category === 'popular').slice(0, 6);
     return (
         <div className="container mx-auto py-4">
-        <h1 className="text-2xl font-semibold mb-4">Photography Courses</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {instractor.map(item => <InstructorCart
-                key={item._id}
-                item={item}
-            ></InstructorCart>)}
+            <div className="bg-gradient-to-r from-purple-500 to-blue-500  rounded-lg py-5 my-5 ">
+                <h2 className="text-3xl font-bold text-white text-center">Meet Our Instructor</h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-auto gap-4 ">
+                {popular.map(item => <InstructorCart
+                    key={item._id}
+                    item={item}
+                ></InstructorCart>)}
+            </div>
         </div>
-    </div>
     );
 };
 
