@@ -17,7 +17,7 @@ const ExSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           <div className="bg-white shadow-lg rounded-lg overflow-hidden">
             <img
-              src="https://example.com/unique-section-1.jpg"
+              src=""
               alt="Unique Perspective 1"
               className="w-full h-64 object-cover object-center"
             />
@@ -33,7 +33,7 @@ const ExSection = () => {
           </div>
           <div className="bg-white shadow-lg rounded-lg overflow-hidden">
             <img
-              src="https://example.com/unique-section-2.jpg"
+              src=""
               alt="Unique Perspective 2"
               className="w-full h-64 object-cover object-center"
             />
@@ -49,7 +49,7 @@ const ExSection = () => {
           </div>
           <div className="bg-white shadow-lg rounded-lg overflow-hidden">
             <img
-              src="https://example.com/unique-section-3.jpg"
+              src=""
               alt="Unique Perspective 3"
               className="w-full h-64 object-cover object-center"
             />

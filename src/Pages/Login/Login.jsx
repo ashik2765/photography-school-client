@@ -1,6 +1,6 @@
 
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Provider/Authprovider';
 import Swal from 'sweetalert2';
 import SocialLogin from '../Shared/SocialLogin/SocialLogin';
@@ -9,6 +9,10 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const { signIn } = useContext(AuthContext);
   const [Error, setError] = useState()
+  const navigate = useNavigate()
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/"
 
   const handleTogglePassword = () => {
     setShowPassword(!showPassword);
@@ -33,12 +37,9 @@ const Login = () => {
           hideClass: {
             popup: 'animate__animated animate__fadeOutUp'
           }
-        })
+        });
+        navigate(from,{replace:true})
       })
-      .catch(error => {
-        setError(error.message)
-      })
-
   };
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">

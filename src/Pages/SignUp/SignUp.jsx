@@ -23,15 +23,16 @@ const SignUp = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
+
                     updateUserProfile(data.name,data.photoURL)
                     .then(() => {
-                        console.log('user profile info updated')
+                        
                        
                         reset();
                         Swal.fire({
                             position: 'top-end',
                             icon: 'success',
-                            title: 'User Create Successfully',
+                            title: 'User Created Successfully',
                             showConfirmButton: false,
                             timer: 1500
                         })
@@ -58,8 +59,8 @@ const SignUp = () => {
                             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="photo">
                                 Photo URL
                             </label>
-                            <input className="w-full bg-gray-200 appearance-none border border-gray-300 rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="photo" name="photo" type="text" {...register("photo", { required: true })} placeholder="Photo URL" />
-                            {errors.photo && <span className="text-red-600">Photo URL is required</span>}
+                            <input className="w-full bg-gray-200 appearance-none border border-gray-300 rounded py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="photo" name="photo" type="text" {...register("photoURL", { required: true })} placeholder="Photo URL" />
+                            {errors.photoURL && <span className="text-red-600">Photo URL is required</span>}
                         </div>
 
                         <div className="mb-6">
