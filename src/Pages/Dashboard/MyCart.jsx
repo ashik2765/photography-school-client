@@ -1,17 +1,47 @@
 import { FaTrashAlt, FaWallet } from "react-icons/fa";
 import useCart from "../../Hooks/useCart";
+import Swal from "sweetalert2";
 
 
 const MyCart = () => {
-    const [cart] = useCart();
+    const [cart,refetch] = useCart();
 
-    const total = cart.reduce((sum, item) => parseFloat(item.price) + sum, 0)
+    // const total = cart.reduce((sum, item) => parseFloat(item.price) + sum, 0)
+    const handleDelete = (item) => {
+        console.log(item)
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:5000/carts/${item._id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0){
+                            refetch();
+                            Swal.fire(
+                                'Deleted!',
+                                'Course is deleted.',
+                                'success'
+                            )
+                        }
+                })
+                
+            }
+        })
+
+    }
 
     return (
         <div className="w-full">
-            <h1 className="text-red-600">from my cart:{cart.length}</h1>
-            <h1 className="text-red-600">from my cart:{total}</h1>
-
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     {/* head */}
@@ -45,7 +75,7 @@ const MyCart = () => {
                                 <button className="btn"><FaWallet />Pay</button>
                             </th>
                             <th>
-                                <button className="btn"><FaTrashAlt /></button>
+                                <button onClick={() => handleDelete(item)} className="btn"><FaTrashAlt /></button>
                             </th>
                         </tr>)}
 
