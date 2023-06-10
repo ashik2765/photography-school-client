@@ -25,7 +25,7 @@ import MyCart from "../Pages/Dashboard/MyCart";
         },
         {
             path:'instructor',
-            element:<PrivateRoute><Instructor></Instructor></PrivateRoute>
+            element:<Instructor></Instructor>
         },
         {
             path:'allclasses',
