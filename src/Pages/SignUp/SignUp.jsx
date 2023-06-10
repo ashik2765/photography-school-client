@@ -8,13 +8,13 @@ import SocialLogin from "../Shared/SocialLogin/SocialLogin";
 
 const SignUp = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
-    const { createUser,updateUserProfile } = useContext(AuthContext);
+    const { createUser, updateUserProfile } = useContext(AuthContext);
     const navigate = useNavigate();
     const [passwordMatch, setPasswordMatch] = useState(true);
 
 
     const onSubmit = data => {
-        console.log(data)
+
         if (data.password !== data.confirmPassword) {
             setPasswordMatch(false);
             return;
@@ -24,21 +24,33 @@ const SignUp = () => {
                 const loggedUser = result.user;
                 console.log(loggedUser)
 
-                    updateUserProfile(data.name,data.photoURL)
+                updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        
-                       
-                        reset();
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'success',
-                            title: 'User Created Successfully',
-                            showConfirmButton: false,
-                            timer: 1500
+                        const savedUser = { name: data.name, email: data.email }
+                        fetch('http://localhost:5000/users', {
+                            method: "POST",
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(savedUser)
                         })
-                        navigate('/');
+                            .then(res => res.json())
+                            .then(data => {
+                                if (data.insertedId) {
+                                    reset();
+                                    Swal.fire({
+                                        position: 'top-end',
+                                        icon: 'success',
+                                        title: 'User Created Successfully',
+                                        showConfirmButton: false,
+                                        timer: 1500
+                                    })
+                                    navigate('/');
+                                }
+                            })
+
                     })
-                    .catch(error => console.log(error))
+
             })
     };
     return (
@@ -110,7 +122,7 @@ const SignUp = () => {
                                 <p className="text-red-600">Passwords do not match</p>
                             )}
                         </div>
-                       
+
                         <div className="flex items-center justify-center">
                             <input className="w-full bg-slate-600 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Sign Up" />
                         </div>
