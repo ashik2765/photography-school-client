@@ -9,7 +9,7 @@ const Footer = () => {
     }, []);
     return (
         <div>
-            <footer className="bg-gradient-to-r from-purple-500 to-blue-500 text-white">
+            <footer className="bg-gradient-to-r from-blue-500 to-purple-500 text-white">
                 <div className="container mx-auto py-8 md:py-12">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div className="text-center md:text-left ms-4">

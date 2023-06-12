@@ -70,7 +70,7 @@ import AdminRoute from "./AdminRoute";
         {
           path:'addaclass',
           element:<InstructorRoute><AddAClass></AddAClass></InstructorRoute>
-        },
+        }
        
       ]
     }
