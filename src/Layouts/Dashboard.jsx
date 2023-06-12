@@ -30,16 +30,16 @@ const Dashboard = () => {
 
                         {
                             isAdmin ? (<>
-                                <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/dashboard/user'><FaHome />Admin Home</NavLink></li>
+                                <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/dashboard'><FaHome />Admin Home</NavLink></li>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink to="/dashboard/manageclasses"><FaBookReader />Manage Classes</NavLink></li>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/dashboard/allusers'><FaUsers />Manage Users</NavLink></li>
                                 
                             </>) : isInstructor ? (<>
-                                <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/dashboard/user'><FaHome />Instructor Home</NavLink></li>
+                                <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/dashboard'><FaHome />Instructor Home</NavLink></li>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink to="/dashboard/addaclass"><FaBookReader />Add a Class</NavLink></li>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink><FaWallet />My Classes</NavLink></li>
                             </>) :<>
-                                <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/dashboard/user'><FaHome />User Home</NavLink></li>
+                                <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/dashboard'><FaHome />User Home</NavLink></li>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink to="/dashboard/mycart"><FaBookReader />My Selected Classes</NavLink></li>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink><FaWallet />My Enrolled Classes</NavLink></li>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/dashboard/payment'><FaHistory />Payment History</NavLink></li>

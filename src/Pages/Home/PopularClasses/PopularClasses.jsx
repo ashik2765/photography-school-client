@@ -6,7 +6,7 @@ const PopularClasses = () => {
 
     const [classes] = useClasses();
 
-    const popular = classes.filter(item => item.category === 'popular');
+    const popular = classes.filter(item => item.category === 'popular').slice(0, 6);
 
     return (
         <div className="container mx-auto py-4">
