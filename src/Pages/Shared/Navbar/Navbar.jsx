@@ -16,11 +16,11 @@ const Navbar = () => {
   }
 
   const Options = <>
-    <li><Link>Home</Link></li>
+    <li><Link to='/'>Home</Link></li>
     <li><Link to='/instructor'>Instructor</Link></li>
     <li><Link to='/allclasses'>Classes</Link></li>
     <li><p>{cart.length}</p></li>
-    {user ? <><li><Link to='dashboard/mycart'>Dashboard</Link></li></> : <></>}
+    {user ? <><li><Link to='dashboard'>Dashboard</Link></li></> : <></>}
 
 
   </>

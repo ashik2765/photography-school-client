@@ -13,6 +13,10 @@ import Dashboard from "../Layouts/Dashboard";
 import MyCart from "../Pages/Dashboard/MyCart";
 import AllUsers from "../Pages/Dashboard/AllUsers";
 import ManageClasses from "../Pages/Dashboard/ManageClasses";
+import AddAClass from "../Pages/Dashboard/AddAClass";
+import Payment from "../Pages/Dashboard/Payment";
+import InstructorRoute from "./InstructorRoute";
+import AdminRoute from "./AdminRoute";
 
 
   export const router = createBrowserRouter([
@@ -52,13 +56,22 @@ import ManageClasses from "../Pages/Dashboard/ManageClasses";
           element:<MyCart></MyCart>
         },
         {
+          path:'payment',
+          element:<Payment></Payment>
+        },
+        {
           path:'allusers',
-          element:<AllUsers></AllUsers>
+          element:<AdminRoute><AllUsers></AllUsers></AdminRoute>
         },
         {
           path:'manageclasses',
-          element:<ManageClasses></ManageClasses>
-        }
+          element:<AdminRoute><ManageClasses></ManageClasses></AdminRoute>
+        },
+        {
+          path:'addaclass',
+          element:<InstructorRoute><AddAClass></AddAClass></InstructorRoute>
+        },
+       
       ]
     }
     

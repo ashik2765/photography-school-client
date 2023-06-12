@@ -1,6 +1,7 @@
-import { FaTrashAlt, FaWallet } from "react-icons/fa";
+import { FaTrashAlt, FaWallet} from "react-icons/fa";
 import useCart from "../../Hooks/useCart";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 const MyCart = () => {
@@ -20,7 +21,7 @@ const MyCart = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/carts/${item._id}`, {
+                fetch(`https://summer-camp-server-chi.vercel.app/carts/${item._id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -72,7 +73,9 @@ const MyCart = () => {
                             <td>{item.name}</td>
                             <td>${item.price}</td>
                             <th>
+                                <Link to={`mycart/${item._id}`}>
                                 <button className="btn"><FaWallet />Pay</button>
+                                </Link>
                             </th>
                             <th>
                                 <button onClick={() => handleDelete(item)} className="btn"><FaTrashAlt /></button>

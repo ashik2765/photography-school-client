@@ -2,16 +2,16 @@ import { NavLink, Outlet } from "react-router-dom";
 import { FaBookReader, FaChalkboardTeacher, FaHistory, FaHome,FaUsers, FaWallet } from 'react-icons/fa';
 import Navbar from "../Pages/Shared/Navbar/Navbar";
 import Footer from "../Pages/Shared/Footer/Footer";
-
-
-
-
+import useAdmin from "../Hooks/useAdmin";
+import useInstructor from "../Hooks/useInstructor";
 
 const Dashboard = () => {
 
     //TODO:
-    const isAdmin = true;
-    const isInstructor = false;
+    // const isAdmin = false;
+    const [isAdmin]= useAdmin();
+    // const isInstructor = false;
+    const [isInstructor]= useInstructor();
     
     return (
         <>
@@ -36,13 +36,13 @@ const Dashboard = () => {
                                 
                             </>) : isInstructor ? (<>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/dashboard/user'><FaHome />Instructor Home</NavLink></li>
-                                <li className="shadow-lg text-white text-xl mb-4"><NavLink to="/dashboard/mycart"><FaBookReader />Add a Class</NavLink></li>
+                                <li className="shadow-lg text-white text-xl mb-4"><NavLink to="/dashboard/addaclass"><FaBookReader />Add a Class</NavLink></li>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink><FaWallet />My Classes</NavLink></li>
                             </>) :<>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/dashboard/user'><FaHome />User Home</NavLink></li>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink to="/dashboard/mycart"><FaBookReader />My Selected Classes</NavLink></li>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink><FaWallet />My Enrolled Classes</NavLink></li>
-                                <li className="shadow-lg text-white text-xl mb-4"><NavLink><FaHistory />Payment History</NavLink></li>
+                                <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/dashboard/payment'><FaHistory />Payment History</NavLink></li>
                             </> 
                         }
 
