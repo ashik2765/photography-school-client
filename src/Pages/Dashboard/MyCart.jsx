@@ -73,7 +73,7 @@ const MyCart = () => {
                             <td>{item.name}</td>
                             <td>${item.price}</td>
                             <th>
-                                <Link to={`mycart/${item._id}`}>
+                                <Link to={`/dashboard/payment/${item._id}`}>
                                 <button className="btn"><FaWallet />Pay</button>
                                 </Link>
                             </th>

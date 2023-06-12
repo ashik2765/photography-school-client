@@ -56,7 +56,7 @@ import AdminRoute from "./AdminRoute";
           element:<MyCart></MyCart>
         },
         {
-          path:'payment',
+          path:'payment/:id',
           element:<Payment></Payment>
         },
         {
