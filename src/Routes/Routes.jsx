@@ -19,6 +19,7 @@ import InstructorRoute from "./InstructorRoute";
 import AdminRoute from "./AdminRoute";
 
 
+
   export const router = createBrowserRouter([
     {
       path: "/",

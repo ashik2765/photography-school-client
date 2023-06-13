@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaBookReader, FaChalkboardTeacher, FaHistory, FaHome,FaUsers, FaWallet } from 'react-icons/fa';
+import { FaBookReader,FaHistory, FaHome, FaUsers, FaWallet } from 'react-icons/fa';
 import Navbar from "../Pages/Shared/Navbar/Navbar";
 import Footer from "../Pages/Shared/Footer/Footer";
 import useAdmin from "../Hooks/useAdmin";
@@ -7,12 +7,10 @@ import useInstructor from "../Hooks/useInstructor";
 
 const Dashboard = () => {
 
-    //TODO:
-    // const isAdmin = false;
-    const [isAdmin]= useAdmin();
-    // const isInstructor = false;
-    const [isInstructor]= useInstructor();
-    
+    //Button will disable if admin and user are login
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
+
     return (
         <>
             <Navbar></Navbar>
@@ -33,24 +31,24 @@ const Dashboard = () => {
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/dashboard'><FaHome />Admin Home</NavLink></li>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink to="/dashboard/manageclasses"><FaBookReader />Manage Classes</NavLink></li>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/dashboard/allusers'><FaUsers />Manage Users</NavLink></li>
-                                
+
                             </>) : isInstructor ? (<>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/dashboard'><FaHome />Instructor Home</NavLink></li>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink to="/dashboard/addaclass"><FaBookReader />Add a Class</NavLink></li>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink><FaWallet />My Classes</NavLink></li>
-                            </>) :<>
+                            </>) : <>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/dashboard'><FaHome />User Home</NavLink></li>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink to="/dashboard/mycart"><FaBookReader />My Selected Classes</NavLink></li>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink><FaWallet />My Enrolled Classes</NavLink></li>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/dashboard/payment'><FaHistory />Payment History</NavLink></li>
-                            </> 
+                            </>
                         }
 
-                        <div className="divider"></div>
-
+                        {/* TODO: Uncomment commponent below */}
+                        {/* <div className="divider"></div>
                         <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/'><FaHome />Home</NavLink></li>
                         <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/allclasses'><FaBookReader />Classes</NavLink></li>
-                        <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/instructor'><FaChalkboardTeacher />Instructors</NavLink></li>
+                        <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/instructor'><FaChalkboardTeacher />Instructors</NavLink></li> */}
 
 
                     </ul>

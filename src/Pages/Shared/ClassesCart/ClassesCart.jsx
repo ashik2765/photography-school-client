@@ -3,20 +3,24 @@ import { AuthContext } from "../../../Provider/Authprovider";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 import useCart from "../../../Hooks/useCart";
+import useAdmin from "../../../Hooks/useAdmin";
+import useInstructor from "../../../Hooks/useInstructor";
 
 
 const ClassesCart = ({ item }) => {
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
-    const [,refetch]= useCart();
-    const { name, image, description, price,
-        availableSeats, _id } = item;
-        const handleAddtoCart = (item) => {
+    const [, refetch] = useCart();
+    const { name, image, description, price,availableSeats, _id }= item;
+    const [isAdmin] = useAdmin();
+    const [isInstructor] = useInstructor();
+
+    const handleAddtoCart = (item) => {
         console.log(item);
         if (user && user.email) {
             const cartItem = { classId: _id, name, image, price, email: user.email }
-            fetch('https://summer-camp-server-chi.vercel.app/carts', {
+            fetch('http://localhost:5000/carts', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -64,7 +68,9 @@ const ClassesCart = ({ item }) => {
                 <p>Available Seat: {availableSeats}</p>
 
                 <div className="card-actions justify-end">
-                    <button onClick={() => handleAddtoCart(item)} className="btn btn-primary">Buy Now</button>
+                    <button
+                        disabled={isAdmin || isInstructor}
+                        onClick={() => handleAddtoCart(item)} className="btn btn-primary">Selected</button>
                 </div>
             </div>
         </div>
