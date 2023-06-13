@@ -12,6 +12,7 @@ const AddAClass = () => {
     const { register, handleSubmit,reset} = useForm();
     const img_hosting_url = `https://api.imgbb.com/1/upload?key=${img_hosting_token}`
     const onSubmit = data => {
+        data.status='pending'
         const formData = new FormData();
         formData.append('image', data.image[0])
         fetch(img_hosting_url, {
@@ -23,9 +24,9 @@ const AddAClass = () => {
                 if (imgResponse.success) {
                     const imgURL = imgResponse.data.display_url;
 
-                    const { name, category, description, email, instructor, price,availableSeats } = data;
+                    const { name, category, description, email, instructor, price,availableSeats,status } = data;
 
-                    const newItem = { name, category, description, email, instructor, price:parseFloat(price), image: imgURL,availableSeats}
+                    const newItem = { name, category, description, email, instructor, price:parseFloat(price), image: imgURL,availableSeats,status}
 
                     axiosSecure.post('/classes',newItem)
                     .then(data => {

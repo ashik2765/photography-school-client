@@ -9,10 +9,10 @@ const useAxiosSecure = () => {
   const navigate = useNavigate(); 
 
   const axiosSecure = axios.create({
-    baseURL: 'http://localhost:5000', 
+    baseURL: 'https://summer-camp-server-chi.vercel.app', 
   });
 
-  //TODO:http://localhost:5000
+  //TODO:https://summer-camp-server-chi.vercel.app
 
   useEffect(() => {
     axiosSecure.interceptors.request.use((config) => {

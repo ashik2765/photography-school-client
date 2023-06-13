@@ -13,33 +13,43 @@ const AllUsers = () => {
 
 
     const handleMakeAdmin = (user, role) => {
-        fetch(`http://localhost:5000/users/${role}/${user._id}`, {
+        fetch(`https://summer-camp-server-chi.vercel.app/users/${role}/${user._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
             .then(data => {
                 console.log(data);
                 refetch();
+               
                 if (data.modifiedCount) {
                     
                     let roleText = '';
                     
                     if (role === 'admin') {
                         roleText = 'Admin';
+                        Swal.fire({
+                        
+                            position: 'top-end',
+                            icon: 'success',
+                            title: `Make Successfully`,
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
                         
                     } else if (role === 'instructor') {
                         roleText = 'Instructor';
+                        Swal.fire({
+                        
+                            position: 'top-end',
+                            icon: 'success',
+                            title: `Make ${roleText} Successfully`,
+                            showConfirmButton: false,
+                            timer: 1500
+                        });
                         
                     }
                     
-                    Swal.fire({
-                        
-                        position: 'top-end',
-                        icon: 'success',
-                        title: `Make ${roleText} Successfully`,
-                        showConfirmButton: false,
-                        timer: 1500
-                    });
+                    
                 }
             });
     }
@@ -47,7 +57,7 @@ const AllUsers = () => {
 
     //Make Admin method
     // const handleMakeAdmin = (user) => {
-    //     fetch(`http://localhost:5000/users/admin/${user._id}`, {
+    //     fetch(`https://summer-camp-server-chi.vercel.app/users/admin/${user._id}`, {
     //         method: 'PATCH'
     //     })
     //         .then(res => res.json())
