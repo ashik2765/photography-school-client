@@ -17,6 +17,10 @@ import AddAClass from "../Pages/Dashboard/AddAClass";
 import Payment from "../Pages/Dashboard/Payment";
 import InstructorRoute from "./InstructorRoute";
 import AdminRoute from "./AdminRoute";
+import MyClasses from "../Pages/Dashboard/MyClasses";
+import InstructorHome from "../Pages/Dashboard/InstructorHome";
+import AdminHome from "../Pages/Dashboard/AdminHome";
+import StudentHome from "../Pages/Dashboard/StudentHome";
 
 
 
@@ -53,12 +57,20 @@ import AdminRoute from "./AdminRoute";
       element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
       children:[
         {
+          path:'studenthome',
+          element:<StudentHome></StudentHome>
+        },
+        {
           path:'mycart',
           element:<MyCart></MyCart>
         },
         {
           path:'payment/:id',
           element:<Payment></Payment>
+        },
+        {
+          path:'adminhome',
+          element:<AdminHome></AdminHome>
         },
         {
           path:'allusers',
@@ -69,8 +81,16 @@ import AdminRoute from "./AdminRoute";
           element:<AdminRoute><ManageClasses></ManageClasses></AdminRoute>
         },
         {
+          path:'instructorhome',
+          element:<InstructorHome></InstructorHome>
+        },
+        {
           path:'addaclass',
           element:<InstructorRoute><AddAClass></AddAClass></InstructorRoute>
+        },
+        {
+          path:'myclasses',
+          element:<MyClasses></MyClasses>
         }
        
       ]

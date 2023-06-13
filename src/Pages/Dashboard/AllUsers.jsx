@@ -19,15 +19,21 @@ const AllUsers = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                refetch();
                 if (data.modifiedCount) {
-                    refetch();
+                    
                     let roleText = '';
+                    
                     if (role === 'admin') {
                         roleText = 'Admin';
+                        
                     } else if (role === 'instructor') {
                         roleText = 'Instructor';
+                        
                     }
+                    
                     Swal.fire({
+                        
                         position: 'top-end',
                         icon: 'success',
                         title: `Make ${roleText} Successfully`,
@@ -71,8 +77,8 @@ const AllUsers = () => {
                         <tr>
                             <th>Name</th>
                             <th>Email</th>
-                            <th>Role</th>
-                            <th>Role</th>
+                            <th>Make Admin</th>
+                            <th>Make Instructor</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -86,7 +92,7 @@ const AllUsers = () => {
                             </td>
 
                             <td>
-                                {user.role === 'Instructor' ? 'Instructor' :
+                                {user.role === 'instructor' ? 'instructor' :
                                     <button onClick={() => handleMakeAdmin(user, 'instructor')}><FaBookReader /></button>}
                             </td>
                         </tr>)}

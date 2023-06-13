@@ -1,29 +1,33 @@
 import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
 import useClasses from "../../Hooks/useClasses";
 
 
-const ManageClasses = () => {
-    const [classes] = useClasses([]);
+const MyClasses = () => {
+    const [classes] = useClasses();
+    const { user } = useAuth();
+    const email = user.email;
+    console.log(email)
+    const myclasses = classes.filter((item) => item.email === email);
+    console.log(myclasses);
     return (
         <>
-
             <div className="w-full">
                 <div className="overflow-x-auto w-full">
                     <table className="table w-full">
                         {/* head */}
                         <thead>
-                            
                             <tr>
                                 <th>#</th>
-                                <th className="text-xl">Image</th>
-                                <th className="text-xl">Title/Instructor Info</th>
-                                <th className="text-xl">Price/Seats</th>
-                                <th className="text-xl">Approved/Denied</th>
-                                <th className="text-xl">Feedback</th>
+                                <th>Image</th>
+                                <th>Title</th>
+                                <th>Price</th>
+                                <th>Pay</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {classes.map((item, index) => <tr
+                            {myclasses.map((item, index) => <tr
                                 key={item._id}
                             >
                                 <td>{index + 1}</td>
@@ -36,29 +40,18 @@ const ManageClasses = () => {
                                         </div>
                                     </div>
                                 </td>
-                                <td>
-                                    {item.name}
-                                    <p>Instructor: {item?.instructor}</p>
-                                    <p>Email: {item?.email}</p>
-                                </td>
-                                <td>
-                                    ${item.price}
-                                    <p>{item.a}</p>
-                                </td>
+                                <td>{item.name}</td>
+                                <td>${item.price}</td>
                                 <th>
                                     <Link>
                                         <button className="btn">
                                             Approved
                                         </button>
-                                        <br></br>
-                                        <button className="btn mt-2 tracking-[.31em]">
-                                            Denied
-                                        </button>
                                     </Link>
                                 </th>
                                 <th>
                                     <button className="btn">
-                                        Feedback
+                                        Delete
                                     </button>
                                 </th>
                             </tr>)}
@@ -74,4 +67,4 @@ const ManageClasses = () => {
     );
 };
 
-export default ManageClasses;
+export default MyClasses;
