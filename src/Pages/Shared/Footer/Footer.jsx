@@ -26,7 +26,7 @@ const Footer = () => {
                             <div className="about-section">
                                 {/* About information */}
                                 <h3 className="text-lg font-semibold mb-4">About Us</h3>
-                                <p className="text-gray-400 leading-relaxed">
+                                <p className="tex-white leading-relaxed">
                                 Capture the essence of summer at our Photography Camp! Join young students in hands-on activities, workshops, and field trips to explore the art of photography. Ignite creativity, learn techniques, and create lasting memories. Enroll today!
                                 </p>
                             </div>

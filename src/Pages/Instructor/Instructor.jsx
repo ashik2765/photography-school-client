@@ -1,8 +1,8 @@
-import useClasses from '../../Hooks/useClasses';
+import useIstructors from '../../Hooks/useIstructors';
 import InstructorCart from '../Shared/InstructorCart/InstructorCart';
 
 const Instructor = () => {
-    const [classes] = useClasses([]);
+    const [instructor] = useIstructors([]);
 
     return (
         <div>
@@ -11,7 +11,7 @@ const Instructor = () => {
             </div>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4'>
                 {
-                    classes.map(item => <InstructorCart
+                    instructor.map(item => <InstructorCart
                         key={item._id}
                         item={item}
                     ></InstructorCart>)

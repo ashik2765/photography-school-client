@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import useClasses from "../../Hooks/useClasses";
 
@@ -7,9 +6,8 @@ const MyClasses = () => {
     const [classes] = useClasses();
     const { user } = useAuth();
     const email = user.email;
-    console.log(email)
     const myclasses = classes.filter((item) => item.email === email);
-    console.log(myclasses);
+    
     return (
         <>
             <div className="w-full">
@@ -21,8 +19,8 @@ const MyClasses = () => {
                                 <th>#</th>
                                 <th>Image</th>
                                 <th>Title</th>
-                                <th>Price</th>
-                                <th>Pay</th>
+                                <th>Status</th>
+                                <th>Feedback</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -41,17 +39,13 @@ const MyClasses = () => {
                                     </div>
                                 </td>
                                 <td>{item.name}</td>
-                                <td>${item.price}</td>
+                                <td>{item.status}</td>
                                 <th>
-                                    <Link>
-                                        <button className="btn">
-                                            Approved
-                                        </button>
-                                    </Link>
+                                    <p>It is a awsome!!!</p>
                                 </th>
                                 <th>
                                     <button className="btn">
-                                        Delete
+                                        Update
                                     </button>
                                 </th>
                             </tr>)}

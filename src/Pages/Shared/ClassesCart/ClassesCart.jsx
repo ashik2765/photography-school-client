@@ -12,7 +12,7 @@ const ClassesCart = ({ item }) => {
     const navigate = useNavigate();
     const location = useLocation();
     const [, refetch] = useCart();
-    const { name, image, description, price,availableSeats, _id }= item;
+    const { name, image, description, price,availableSeats, _id,instructor }= item;
     const [isAdmin] = useAdmin();
     const [isInstructor] = useInstructor();
 
@@ -62,10 +62,10 @@ const ClassesCart = ({ item }) => {
             <figure><img src={image} alt="Image" className="w-full h-72" /></figure>
             <div className="card-body">
                 <h2 className="card-title">{name}</h2>
+                <p>Instructor: {instructor}</p>
                 <p>{description}</p>
-                <p>{price}</p>
-                <p>{price}</p>
-                <p>Available Seat: {availableSeats}</p>
+                <h3>Price: {price}</h3>
+                <p>Available Seats: {availableSeats}</p>
 
                 <div className="card-actions justify-end">
                     <button
