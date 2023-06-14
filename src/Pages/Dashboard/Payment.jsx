@@ -22,7 +22,7 @@ const Payment = () => {
                 <h2 className="text-3xl font-bold pb-2 text-white text-center">Payment Getway</h2>
             </div>
             <Elements stripe={stripePromise}>
-                <CheckOut price={price}></CheckOut>
+                <CheckOut cart={singleCart} price={price}></CheckOut>
             </Elements>
 
         </div>

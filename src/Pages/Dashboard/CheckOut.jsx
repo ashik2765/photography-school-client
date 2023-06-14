@@ -4,7 +4,7 @@ import useAxiosSecure from '../../Hooks/useAxiosSecure';
 import useAuth from '../../Hooks/useAuth';
 
 
-const CheckOut = ({ price }) => {
+const CheckOut = ({ cart,price }) => {
 
     const stripe = useStripe();
     const elements = useElements()
@@ -14,6 +14,7 @@ const CheckOut = ({ price }) => {
     const [clientSecret, setClientSecret] = useState('')
     const [proccesing, setProccesing] = useState(false);
     const [transactionId, setTransactionId] = useState();
+    
 
 
     useEffect(() => {
@@ -70,8 +71,22 @@ const CheckOut = ({ price }) => {
         setProccesing(false);
         if (paymentIntent.status === 'succeeded') {
             setTransactionId(paymentIntent.id);
-            //TODO: next step
-
+            const payment ={
+                email:user?.email,
+                transactionId:paymentIntent.id,
+                price,
+                date: new Date(),
+                cart,
+                status: 'service pending',
+                id:cart?._id,
+            }
+            axiosSecure.post('/payments',payment)
+            .then(res =>{
+                console.log(res.data);
+                if(res.data.insertedId){
+                    //display conform
+                }
+            })
         }
 
     }
