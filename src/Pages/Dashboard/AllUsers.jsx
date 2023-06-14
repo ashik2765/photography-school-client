@@ -13,7 +13,7 @@ const AllUsers = () => {
 
 
     const handleMakeAdmin = (user, role) => {
-        fetch(`https://summer-camp-server-chi.vercel.app/users/${role}/${user._id}`, {
+        fetch(`http://localhost:5000/users/${role}/${user._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -57,7 +57,7 @@ const AllUsers = () => {
 
     //Make Admin method
     // const handleMakeAdmin = (user) => {
-    //     fetch(`https://summer-camp-server-chi.vercel.app/users/admin/${user._id}`, {
+    //     fetch(`http://localhost:5000/users/admin/${user._id}`, {
     //         method: 'PATCH'
     //     })
     //         .then(res => res.json())
