@@ -12,7 +12,7 @@ const Payment = () => {
     const [cart] = useCart();
     const singleCart = cart.filter((item) => item._id === id);
     const price = singleCart[0]?.price;
-    //TODO: if feel any problem on price fraction added parsFloat(price.toFiexd(2))
+    
     
     
 

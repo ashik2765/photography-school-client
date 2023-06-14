@@ -11,20 +11,20 @@ const Footer = () => {
     }, []);
     return (
         <div>
-            {/* (including website logo or name or both, copyright, some contact information, Address etc.) */}
+            
             <footer className="bg-gradient-to-r from-blue-500 to-purple-500 text-white">
                 <div className="container mx-auto py-8 md:py-12">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div className="text-center md:text-left ms-4">
                             <div className="logo-section flex items-center">
-                                {/* Your logo here */}
+                                
                                 <img src={logo} alt="Logo" className=" mx-auto mt-16 md:mx-0 h-10 md:h-12" />
                                 
                             </div>
                         </div>
                         <div>
                             <div className="about-section">
-                                {/* About information */}
+                                
                                 <h3 className="text-lg font-semibold mb-4">About Us</h3>
                                 <p className="tex-white leading-relaxed">
                                 Capture the essence of summer at our Photography Camp! Join young students in hands-on activities, workshops, and field trips to explore the art of photography. Ignite creativity, learn techniques, and create lasting memories. Enroll today!
@@ -47,7 +47,7 @@ const Footer = () => {
                                     </li>
                                 </ul>
                             </div>
-                            {/* Copy */}
+                            
                             <div className="social-section mt-5 me-5">
                                 {/* Social links */}
                                 <h3 className="text-lg font-semibold mb-4">Follow Us</h3>

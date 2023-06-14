@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { FaBookReader,FaHistory, FaHome, FaUsers, FaWallet } from 'react-icons/fa';
+import { FaBookReader,FaChalkboardTeacher,FaHistory, FaHome, FaUsers, FaWallet } from 'react-icons/fa';
 import Navbar from "../Pages/Shared/Navbar/Navbar";
 import Footer from "../Pages/Shared/Footer/Footer";
 import useAdmin from "../Hooks/useAdmin";
@@ -39,16 +39,16 @@ const Dashboard = () => {
                             </>) : <>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/dashboard/studenthome'><FaHome />User Home</NavLink></li>
                                 <li className="shadow-lg text-white text-xl mb-4"><NavLink to="/dashboard/mycart"><FaBookReader />My Selected Classes</NavLink></li>
-                                <li className="shadow-lg text-white text-xl mb-4"><NavLink><FaWallet />My Enrolled Classes</NavLink></li>
-                                <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/dashboard'><FaHistory />Payment History</NavLink></li>
+                                <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/dashboard/myenrolledclasses'><FaWallet />My Enrolled Classes</NavLink></li>
+                                <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/dashboard/paymenthistory'><FaHistory />Payment History</NavLink></li>
                             </>
                         }
 
-                        {/* TODO: Uncomment commponent below */}
-                        {/* <div className="divider"></div>
+                        
+                        <div className="divider"></div>
                         <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/'><FaHome />Home</NavLink></li>
                         <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/allclasses'><FaBookReader />Classes</NavLink></li>
-                        <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/instructor'><FaChalkboardTeacher />Instructors</NavLink></li> */}
+                        <li className="shadow-lg text-white text-xl mb-4"><NavLink to='/instructor'><FaChalkboardTeacher />Instructors</NavLink></li>
 
 
                     </ul>

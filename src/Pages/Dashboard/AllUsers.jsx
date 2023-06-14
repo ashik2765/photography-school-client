@@ -13,7 +13,7 @@ const AllUsers = () => {
 
 
     const handleMakeAdmin = (user, role) => {
-        fetch(`http://localhost:5000/users/${role}/${user._id}`, {
+        fetch(`https://summer-camp-server-chi.vercel.app/users/${role}/${user._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -53,32 +53,7 @@ const AllUsers = () => {
                 }
             });
     }
-
-
-    //Make Admin method
-    // const handleMakeAdmin = (user) => {
-    //     fetch(`http://localhost:5000/users/admin/${user._id}`, {
-    //         method: 'PATCH'
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data)
-    //             if (data.modifiedCount) {
-    //                 refetch();
-    //                 Swal.fire({
-    //                     position: 'top-end',
-    //                     icon: 'success',
-    //                     title: 'Make Admin Successfully',
-    //                     showConfirmButton: false,
-    //                     timer: 1500
-    //                 })
-    //             }
-    //         })
-
-
-
-    // }
-    
+   
     return (
         <div className="w-full">
             <div className="overflow-x-auto w-full">

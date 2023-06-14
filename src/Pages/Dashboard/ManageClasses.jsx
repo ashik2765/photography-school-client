@@ -8,9 +8,9 @@ const ManageClasses = () => {
 
     const handleApproved = (item) => {
 
-        //TODO:connect with backend
-        console.log('connecded', item)
-        fetch(`http://localhost:5000/classes/${item._id}`, {
+        
+        
+        fetch(`https://summer-camp-server-chi.vercel.app/classes/${item._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())
@@ -32,7 +32,7 @@ const ManageClasses = () => {
     const handleDenied = (item) => {
         
         console.log('connecded', item)
-        fetch(`http://localhost:5000/classes/denied/${item._id}`, {
+        fetch(`https://summer-camp-server-chi.vercel.app/classes/denied/${item._id}`, {
             method: 'PATCH'
         })
             .then(res => res.json())

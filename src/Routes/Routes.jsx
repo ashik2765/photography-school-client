@@ -21,6 +21,8 @@ import MyClasses from "../Pages/Dashboard/MyClasses";
 import InstructorHome from "../Pages/Dashboard/InstructorHome";
 import AdminHome from "../Pages/Dashboard/AdminHome";
 import StudentHome from "../Pages/Dashboard/StudentHome";
+import MyEnrolledClasses from "../Pages/Dashboard/MyEnrolledClasses";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory";
 
 
 
@@ -69,6 +71,14 @@ import StudentHome from "../Pages/Dashboard/StudentHome";
           element:<Payment></Payment>
         },
         {
+          path:'paymenthistory',
+          element:<PaymentHistory></PaymentHistory>
+        },
+        {
+          path:'myenrolledclasses',
+          element:<MyEnrolledClasses></MyEnrolledClasses>
+        },
+        {
           path:'adminhome',
           element:<AdminHome></AdminHome>
         },
@@ -90,7 +100,7 @@ import StudentHome from "../Pages/Dashboard/StudentHome";
         },
         {
           path:'myclasses',
-          element:<MyClasses></MyClasses>
+          element:<InstructorRoute><MyClasses></MyClasses></InstructorRoute>
         }
        
       ]
